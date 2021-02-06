@@ -65,15 +65,6 @@ extension ViewController: FloatingPanelControllerDelegate {
 
         }
     }
-
-    func floatingPanelDidMove(_ fpc: FloatingPanelController) {
-        if fpc.isAttracting == false {
-            let loc = fpc.surfaceLocation
-            let minY = fpc.surfaceLocation(for: .full).y
-            let maxY = fpc.surfaceLocation(for: .half).y
-            fpc.surfaceLocation = CGPoint(x: loc.x, y: min(max(loc.y, minY), maxY))
-        }
-    }
 }
 
 class MyFloatingPanelLayout: FloatingPanelLayout {
